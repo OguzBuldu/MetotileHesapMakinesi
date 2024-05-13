@@ -1,0 +1,148 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace METOTLAHESAPMAKİNESİ
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            Console.WriteLine("Hesap Makinesi");
+            Console.WriteLine("************************");
+            
+
+
+            
+
+            while (true) //while Döngüsü ile birlikte eğer işlem devam edilmesi isteniyorsa devam ediyor
+            {
+                Console.WriteLine("Lütfen Birinci Sayınızı Giriniz."); //Kullanıcıdan Değer almak için
+                int sayı1 = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("*****************************");
+
+                Console.WriteLine("Lütfen İkinci Sayınızı Giriniz."); //Kullanıcıdan Değer almak için
+                Console.WriteLine("********************************");
+                int sayı2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("**********************************");
+
+                Console.WriteLine("Lütfen Yapmak İstediğiniz İşlemi Seçiniz."); //Kullanıcıdan Değer almak için
+                Console.WriteLine("+, -, *, /");
+
+                string işlem = Console.ReadLine(); //İşlemlerin Seçilmesi İçin
+                if (işlem == "-") //İf komudu ile kullanıcıya seçim sunuyorum
+                {
+                    
+                    Console.WriteLine("İşleminizin Sonucu: "+CıkarmaYap(sayı1,sayı2)); //aşşağıda oluşturduğum metot ile burada kullanıyorum
+
+                    Console.WriteLine("Başka Bir İşlem Yapmak İster misiniz? (evet, hayır)"); //Kullanıcıdan Değer almak için
+
+                    string baska = Console.ReadLine();
+
+                    if (baska == "evet") // burada evet denildiğinde işlem başa dönüyor
+                    {
+                        continue;
+                    }
+
+                    else if (baska == "hayır") //hayır denildiğinde işlem biityor
+                    {
+                        break;
+                    }
+
+                }
+                else if(işlem == "+") {
+                    
+                    Console.WriteLine("İşleminizi Sonucu: "+ToplamaYap(sayı1, sayı2));
+                    Console.WriteLine("Başka Bir İşlem Yapmak İster misiniz? (evet, hayır)");
+
+                    string baska = Console.ReadLine();
+
+                    if (baska == "evet")
+                    {
+                        continue;
+                    }
+
+                    else if (baska == "hayır")
+                    {
+                        break;
+                    }
+                }
+                else if (işlem == "*")
+                {
+                    Console.WriteLine("İşleminizin Sonucu: "+CarpmaYap(sayı1, sayı2)); //aşşağıda oluşturduğum metot ile burada kullanıyorum
+                    Console.WriteLine("Başka Bir İşlem Yapmak İster misiniz? (evet, hayır)");
+
+                    string baska = Console.ReadLine();
+
+                    if (baska == "evet")
+                    {
+                        continue;
+                    }
+
+                    else if (baska == "hayır")
+                    {
+                        break;
+                    }
+                }
+                else if (işlem == "/")
+                {
+                    
+                    Console.WriteLine("İşleminizin Sonucu: "+BölmeYap(sayı1, sayı2)); //aşşağıda oluşturduğum metot ile burada kullanıyorum
+                    Console.WriteLine("Başka Bir İşlem Yapmak İster misiniz? (evet, hayır)");
+
+                    string baska = Console.ReadLine();
+
+                    if (baska == "evet")
+                    {
+                        continue;
+                    }
+
+                    else if (baska == "hayır")
+                    {
+                        break;
+                    }
+                }
+                
+            }
+            Console.ReadLine();
+
+            
+        }
+
+
+
+
+        //Kullandığım geri döndürebilir Metotlar
+
+
+
+        static int CıkarmaYap(int a, int b)
+        {
+            int sonuc = a - b;
+            return sonuc;
+        }
+        static int ToplamaYap(int a, int b)
+        {
+            int sonuc = a + b;
+            return sonuc;
+        }
+        static int BölmeYap(int a, int b)
+        {
+            int sonuc = a / b;
+            return sonuc;
+        }
+        static int CarpmaYap(int a, int b)
+        {
+            int sonuc = a * b;
+            return sonuc;
+        }
+        
+        
+ 
+        
+    }
+}
